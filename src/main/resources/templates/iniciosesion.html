@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+
+<body>
+    <header th:fragment="header" class="header">
+        
+    </header>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center">Iniciar sesión</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Empieza formulario de búsqueda -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <select class="form-control">
+                        <option value="">Seleccionar opción</option>
+                        <option value="nuevos">Nuevos</option>
+                        <option value="accion">Acción</option>
+                        <option value="aventura">Aventura</option>
+                        <option value="rol">Rol</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Aquí termina -->
+    
+    <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
+        <div class="container">
+            <div class="col lead text-center">  
+                <p>&COPY [[#{plantilla.derechos}]]</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.input-group-append button').addEventListener('click', function () {
+            const searchInput = document.querySelector('.form-control').value;
+            window.location.href = '/buscar?query=' + encodeURIComponent(searchInput);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de inicio de sesión</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Contenido de la página de inicio de sesión -->
+  <h1>Lista de Categorías</h1>
+  <ul>
+        <li th:each="categoria : ${categorias}" th:text="${categoria.nombre}"></li>
+  </ul>
+</body>
+</html>
+
+
+
+
+
+
